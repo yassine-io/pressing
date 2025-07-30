@@ -1,5 +1,6 @@
 package com.pressing.service;
 
+import com.pressing.dto.*;
 import com.pressing.models.ArticleEntity;
 import com.pressing.models.ClientEntity;
 
@@ -8,13 +9,17 @@ import java.util.Optional;
 
 public interface ClientService {
 
-    ClientEntity saveClient(ClientEntity client);
+    // interface ClientService
 
-    List<ClientEntity> getAllClient();
+    RegisterResponse register(RegisterRequest request);
+    AuthResponse authenticate(AuthRequest request);
 
-    Optional<ClientEntity> getClientById(Integer id);
+    NouvelleCommandeResponse passerCommande(NouvelleCommandeRequest request);
+    List<CommandeResponse> getMesCommandes(Integer clientId);
 
-    void deleteClient(Integer id);
+    ProfilResponse getProfil(Integer clientId);
+    ProfilResponse updateProfil(Integer clientId, ProfilUpdateRequest request);
+
 
 
 }

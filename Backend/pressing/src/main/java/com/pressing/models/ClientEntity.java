@@ -16,7 +16,9 @@ import java.util.List;
 public class ClientEntity {
 
     @Id
-    private int idClient ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_client")
+    private Integer idClient ;
     @Column(nullable = false)
     private String nom ;
     @Column(nullable = false)

@@ -1,6 +1,7 @@
 package com.pressing.service.impl;
 
 import com.pressing.dao.ClientDao;
+import com.pressing.dto.*;
 import com.pressing.models.ClientEntity;
 import com.pressing.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,31 +14,33 @@ import java.util.Optional;
 @Service
 public class ClientServiceImpl implements ClientService {
 
-    private final ClientDao clientRepository;
-
-    @Autowired
-    public ClientServiceImpl(ClientDao clientRepository) {
-        this.clientRepository = clientRepository;
-    }
-
-
     @Override
-    public ClientEntity saveClient(ClientEntity client) {
-        return clientRepository.save(client);
+    public RegisterResponse register(RegisterRequest request) {
+        return null;
     }
 
     @Override
-    public List<ClientEntity> getAllClient() {
-        return clientRepository.findAll();
+    public AuthResponse authenticate(AuthRequest request) {
+        return null;
     }
 
     @Override
-    public Optional<ClientEntity> getClientById(Integer id) {
-        return clientRepository.findById(id);
+    public NouvelleCommandeResponse passerCommande(NouvelleCommandeRequest request) {
+        return null;
     }
 
     @Override
-    public void deleteClient(Integer id) {
-        clientRepository.deleteById(id);
+    public List<CommandeResponse> getMesCommandes(Integer clientId) {
+        return List.of();
+    }
+
+    @Override
+    public ProfilResponse getProfil(Integer clientId) {
+        return null;
+    }
+
+    @Override
+    public ProfilResponse updateProfil(Integer clientId, ProfilUpdateRequest request) {
+        return null;
     }
 }
