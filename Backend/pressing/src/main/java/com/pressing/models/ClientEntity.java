@@ -18,7 +18,7 @@ public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_client")
-    private Integer idClient ;
+    private Integer id ;
     @Column(nullable = false)
     private String nom ;
     @Column(nullable = false)
@@ -26,11 +26,11 @@ public class ClientEntity {
     @Column(nullable = false)
     private String tel ;
     @Column(nullable = false , name= "login")
-    private String email ;
+    private String username ;
     @Column(nullable = false)
     private String adresse ;
     @Column(nullable = false , name = "password")
-    private String motdepasse ;
+    private String password ;
 
     @OneToMany(mappedBy = "client" ,cascade = CascadeType.ALL , fetch = FetchType.LAZY )
     private List<CommandeEntity> comandes ;
