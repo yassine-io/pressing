@@ -20,7 +20,6 @@ public class LivraisonEntity implements Serializable {
     @GeneratedValue
     private int idLivraison;
 
-    @Column(nullable = false)
     private Date dateLivraison;
 
     @Enumerated(EnumType.STRING)

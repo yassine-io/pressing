@@ -13,22 +13,6 @@ import java.util.Optional;
 
 public interface CommandeService {
 
-    /*
-    CommandeEntity saveCommande(CommandeEntity commande);
-
-    List<CommandeEntity> getAllCommande();
-
-    Optional<CommandeEntity> getArticleById(Integer id);
-
-    void deleteCommande(Integer id);
-
-
-    double calculerTotal(Integer idCommande);
-
-
-   void changerStatut(Integer idCommande, StatutCommande nouveauStatut);
-  */
-
 
     // 1. Passer une nouvelle commande (depuis l’espace client)
     NouvelleCommandeResponse passerCommande(NouvelleCommandeRequest request);
@@ -49,6 +33,8 @@ public interface CommandeService {
     CommandeEntity annulerCommande(Integer idCommande);
 
     List<CommandeResponse> getMesCommandes(Integer clientId);
+
+
 
 
 }

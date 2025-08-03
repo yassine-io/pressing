@@ -1,5 +1,9 @@
 package com.pressing.service;
 
+import com.pressing.dto.ArticleRequest;
+import com.pressing.dto.ArticleResponse;
+import com.pressing.dto.CommandeResponse;
+import com.pressing.dto.ProfilResponse;
 import com.pressing.models.ArticleEntity;
 import com.pressing.models.GerantEntity;
 
@@ -8,11 +12,31 @@ import java.util.Optional;
 
 public interface GerantService {
 
-    GerantEntity saveGerant(GerantEntity gerant);
+    // Gerant_Articles
+    ArticleResponse creerArticle(ArticleRequest request);
+    ArticleResponse modifierArticle(Integer id, ArticleRequest request);
+    void supprimerArticle(Integer id);
+    List<ArticleResponse> afficherArticles();
 
-    List<GerantEntity> getAllGerant();
+    // Gerant_Clients
 
-    Optional<GerantEntity> getGerantById(Integer id);
+    List<ProfilResponse> afficherTousLesClients();
+    ProfilResponse consulterClientParId(Integer id);
+    void supprimerClient(Integer id);
 
-    void deleteGerant(Integer id);
+    //Gerant_Commandes
+    List<CommandeResponse> listerToutesLesCommandes();
+
+    CommandeResponse consulterCommandeParId(Integer id);
+
+    CommandeResponse mettreAJourStatutCommande(Integer idCommande, String nouveauStatut);
+
+    List<CommandeResponse> listerCommandesParStatut(String statut);
+
+    //Genaration_Facture
+    byte[] genererFactureCommande(Integer idCommande);
+
+
+
+
 }

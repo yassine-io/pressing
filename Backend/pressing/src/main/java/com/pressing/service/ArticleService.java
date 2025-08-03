@@ -1,5 +1,7 @@
 package com.pressing.service;
 
+import com.pressing.dto.ArticleRequest;
+import com.pressing.dto.ArticleResponse;
 import com.pressing.models.ArticleEntity;
 
 import java.util.List;
@@ -7,11 +9,9 @@ import java.util.Optional;
 
 public interface ArticleService {
 
-    ArticleEntity saveArticle(ArticleEntity article);
+        ArticleResponse ajouterArticle(ArticleRequest request);
+        ArticleResponse modifierArticle(Integer id, ArticleRequest request);
+        void supprimerArticle(Integer id);
+        List<ArticleResponse> listerArticles();
+    }
 
-    List<ArticleEntity> getAllArticle();
-
-    Optional<ArticleEntity> getArticleById(Integer id);
-
-    void deleteArticle(Integer id);
-}
